@@ -1,0 +1,622 @@
+\documentclass{beamer}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{tikz}
+\usepackage{geometry}
+\usepackage{amsmath}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{amsfonts}
+\usepackage{caption}
+\usepackage{xcolor}
+
+\usepackage[none]{hyphenat}
+
+\usetheme{Madrid}
+\usecolortheme{seahorse}
+
+\geometry{bottom=0in}
+
+\title{Boundary Area}
+\author{Saha Kuljit Shantanu}
+\date{1905119}
+
+\begin{document}
+
+
+
+\maketitle
+
+\section{We need to know}
+
+
+
+\begin{frame}{We need to know}
+
+\begin{block}{Handling Boundary edges}
+   When partitioning a problem space (\textbf{such as a geometric space or a graph}), the elements near the \textbf{boundaries of partitions} may interact with elements in neighboring partitions. These interactions can create \textbf{edge effects}, where the behavior near the boundary is different from that in the interior.
+\end{block}
+    
+    % Block 2: Unit Disk Graph
+\begin{block}{Decomposing Global Problems}
+    For some problems, the \textbf{global structure} is more important than the local details. By studying the boundaries, you can better understand how to decompose the global problem into manageable subproblems \textbf{without losing essential connections} or interactions between different parts of the problem.
+\end{block}
+
+\end{frame}
+
+\begin{frame}{We need to know}
+
+\input{definitions}
+
+\end{frame}
+
+\begin{frame}{UDC$_1$ visualization for $m \times m$ grid}
+
+\input{apprxlemma}
+
+\end{frame}
+
+\begin{frame}{UDC$_1$ visualization for $m \times m$ grid}
+
+\input{apprxlemma2}
+
+\end{frame}
+
+\begin{frame}{UDC$_1$ visualization for $m \times m$ grid}
+
+\input{apprxlemma21}
+
+\end{frame}
+
+\begin{frame}{UDC$_1$ visualization for $m \times m$ grid}
+
+\input{apprxlemma3}
+
+\end{frame}
+
+
+
+\section{Theorem 4.4}
+
+\begin{frame}
+
+\begin{block}{Theorem 4.4}
+
+    For any $\varepsilon > 0$, there is a $(1 + \varepsilon)$-approximation for the minimum dominating set problem in unit disk graphs that runs in time $n^{O(1/\varepsilon^2)}$.
+
+\end{block}
+
+\end{frame}
+
+\begin{frame}{Theorem 4.4}
+
+    \input{reduction}
+    
+\end{frame}
+
+\begin{frame}{Theorem 4.4 contd...}
+
+    \input{theorem41}
+    
+\end{frame}
+
+\begin{frame}{Theorem 4.4 contd...}
+
+    \input{theorem42}
+    
+\end{frame}
+
+\begin{frame}{Theorem 4.4 contd...}
+
+    \input{reduction}
+    
+\end{frame}
+
+\section{ A Lemma We need to know } 
+
+\begin{frame}
+
+    \begin{block}{A Lemma We need to know}
+
+        If a Dominating set $D$ of some graph $G$ is not connected, then the number of its connected components can be reduced by adding at most two vertices to $D$
+
+    \end{block}
+    
+\end{frame}
+
+\begin{frame}{}
+
+\input{CDS}
+
+\end{frame}
+
+\begin{frame}{A Lemma We need to know}
+
+\input{CDS1}
+
+\end{frame}
+
+\begin{frame}{A Lemma We need to know}
+
+\input{CDS2}
+
+\end{frame}
+
+\begin{frame}{A Lemma We need to know}
+
+\input{CDS3}
+
+\end{frame}
+
+\begin{frame}{A Lemma We need to know}
+
+\input{CDS4}
+
+\end{frame}
+
+\begin{frame}{A Lemma We need to know}
+
+\input{CDS5}
+
+\end{frame}
+
+\begin{frame}{A Lemma We need to know}
+
+\input{CDS6}
+
+\end{frame}
+
+\section{Theorem 4.5}
+
+\begin{frame}
+
+
+
+\begin{block}{Theorem 4.5}
+
+    There is a polynomial-time 4-approximation for CDS-UDG.
+
+\end{block}
+
+\end{frame}
+
+\begin{frame}{Theorem 4.5 contd...}
+
+\begin{enumerate}
+
+    \item Suppose the approximated Dominating set of a Unit Disk Graph $G(V,E)$ , $D \subseteq V$ is a (4/3)-approximation for the minimum connected Dominating set $D^*$
+
+
+    $ |D| \le 4|D^*|/3$
+
+    \item Our claim is that $D$ is not connected
+
+    \item We have already proved that, If a Dominating set $D$ of some graph $G$ is not connected, then the number of its connected components can be reduced by adding at most two vertices to $D$
+
+    \item Hence, as per our claim, we need to add at most $2(c -1)$ vertices to $D$ to get a connected dominating set, where $c$ is the number of connected components in $D$.
+    
+\end{enumerate}
+
+
+
+
+\end{frame}
+
+\begin{frame}{Theorem 4.5 contd...}
+
+\begin{exampleblock}{Calculation for 4-approximation}
+
+    Clearly, 
+    $c-1 < c \le |D|$
+
+    \vspace{5mm}
+    
+    $\xrightarrow{} 2(c-1) < 2|D|$
+
+    \vspace{5mm}
+
+    $\xrightarrow{} |D| + 2(c-1) < 3|D|$
+
+    \vspace{5mm}
+
+    $\xrightarrow{} |C| < 3|D|$
+
+    \vspace{5mm}
+
+    $\xrightarrow{} |C| < 3 ( 4|D^*|/3 )$
+
+    \vspace{5mm}
+
+    $\xrightarrow{} |C| < 4|D^*|$
+
+\end{exampleblock}
+    
+\end{frame}
+
+\section{We need to know more}
+
+\begin{frame}{We need to know more}
+
+\input{apprxlemma3}
+
+\end{frame}
+
+\begin{frame}{Why Partition shifting?}
+
+\input{apprxlemma4}
+
+\end{frame}
+
+\begin{frame}{Why Partition shifting?}
+
+\input{part0}
+
+\end{frame}
+
+\begin{frame}{Why Partition shifting?}
+
+\input{part1}
+
+\end{frame}
+
+
+
+\begin{frame}{Why Partition shifting?}
+
+\input{part2}
+
+\end{frame}
+
+\begin{frame}{Why Partition shifting?}
+
+\input{partm}
+
+\end{frame}
+
+\begin{frame}{Central Area and Boundary Area}
+
+\input{central_boundary_area}
+
+\end{frame}
+
+\begin{frame}{Central Area and Boundary Area}
+
+\input{central_area}
+
+\end{frame}
+
+\section{Theorem 4.6}
+
+\begin{frame}{}
+
+\begin{block}{Theorem 4.6}
+
+    For each cell $e$ in a partition $P(a, a)$, the set $C[e]$ can be computed in time $n _e ^ {O(m^2)}$  , where $n_e$ is the number of vertices in $e$
+
+\end{block}
+
+\end{frame}
+
+\begin{frame}{Theorem 4.6}
+
+    \begin{enumerate}
+
+    \item We have already known that that each cell can be covered with $ 2m^2 $ unit disks without considering boundaries, hence there are at most $ 2m^2 $ dominating vertices in $C[e]$
+
+    \item We have already proved that, If a Dominating set $D$ of some graph $G$ is not connected, then the number of its connected components can be reduced by adding at most two vertices to $D$, hence for making the set connected we add at most $ 2 * 2m^2 = 4m^2 $ more vertices to $C[e]$
+
+    \item Hence, as per our claim, there at most $ 6m^2 $ vertices in $C[e]$ to get a connected dominating set, which are selected from $n_e$ vertices in cell $e$
+
+    
+\end{enumerate}
+
+\end{frame}
+
+\begin{frame}{Theorem 4.6 contd...}
+
+    
+    \begin{exampleblock}{Calculation for $C[e]$}
+
+    At most $ 6m^2 $ vertices are exhaustively selected from $n_e$ vertices.
+
+    \vspace{5mm}
+    
+    $ \xrightarrow{} \binom{n_e}{1} + \binom{n_e}{2} + \binom{n_e}{3} + ... + \binom{n_e}{6m^2} $
+
+    \vspace{5mm}
+
+    $\xrightarrow{} \displaystyle \sum_{k=1}^{6m^2} \binom{n_e}{k}$
+
+    \vspace{5mm}
+
+    $\xrightarrow{} n _e ^ {O(m^2)}$
+
+    \vspace{5mm}
+
+    Whether $ C[e] $ dominates each connected dominating set $H$ in subgraph $G_c[e]$ can be determine in linear time. So $C[e]$ is calculated in time $n _e ^ {O(m^2)}$
+
+    \end{exampleblock}
+
+
+\end{frame}
+
+\section{PTAS for CDS-UDG}
+
+\begin{frame}{PTAS for CDS-UDG}
+
+\input{ptas}
+
+
+
+\end{frame}
+
+\section{And we need to know again}
+
+\begin{frame}{And we need to know again}
+
+\input{theorem61}
+
+
+
+\end{frame}
+
+\begin{frame}{How do we achieve $D_a$ ?}
+
+\input{theorem62}
+
+
+
+\end{frame}
+
+\begin{frame}{How do we achieve $G_c[e]$ ?}
+
+\input{theorem63}
+
+\end{frame}
+
+\section{Lemma 4.7}
+
+
+\begin{frame}
+
+    \begin{block}{Lemma 4.7}
+
+        For each $a \hspace{1} \epsilon \hspace{1} \{0, 1,..., m $ $- 1 \}$, set $A_a$ computed by Algorithm $4.B$ in step (8) is a connected dominating set for input unit disk graph $G$.
+        
+    \end{block}
+    
+\end{frame}
+
+\begin{frame}{Lemma 4.7}
+
+\input{theorem64}
+
+\end{frame}
+
+\begin{frame}{Lemma 4.7}
+
+\input{theorem65}
+
+\end{frame}
+
+\begin{frame}{Lemma 4.7}
+
+\input{theorem66}
+
+\end{frame}
+
+\begin{frame}{Lemma 4.7}
+
+\input{theorem67}
+
+\end{frame}
+
+\section{Algorithm 4.B is a PTAS}
+
+\begin{frame}{Algorithm 4.B is a PTAS}
+
+\begin{exampleblock}{Runtime of $C[e]$ computation for each cell $e$ in partition $P(a,a)$}
+
+    \begin{equation}
+        \sum_{e \in P(a,a)} n_e^{O(m^2)} \le \left ( \sum_{e \in P(a,a)} n_e \right ) ^{O(m^2)} = n^{O(m^2)} 
+    \end{equation}
+    
+
+\end{exampleblock}
+
+\begin{exampleblock}{Runtime of algorithm 4.B}
+
+    \For {$a \gets 0$ to $m - 1$} \textcolor{red}{ $\xrightarrow{} O(m)$ } 
+
+    \vspace{0.5em}
+    
+        \hspace{4em} $D_a \gets \{v \in D \mid v \text{ lies in the boundary area of } P(a, a)\} \textcolor{red}{  \xrightarrow{} O(n) }$ 
+
+    \vspace{0.5em}
+        
+        \hspace{4em} $Compute \bigcup\limits_{e \in P(a,a)} C[e] \textcolor{red}{  \xrightarrow{} n^{O(m^2)} }$
+
+    \vspace{2em}
+
+        $ Runtime = \textcolor{red}{ O(mn) + m \cdot n^{O(m^2)} } $
+    
+
+\end{exampleblock}
+
+\end{frame}
+
+\section{Theorem 4.8}
+
+
+\begin{frame}
+
+    \begin{block}{Theorem 4.8}
+
+        Output $A_a^*$ of algorithm $4.B$ is a $(1 + \varepsilon)-approximation$ for CDS-UDG with computation time $ n^{O(1/{\varepsilon^2})} $.
+        
+    \end{block}
+    
+\end{frame}
+
+\begin{frame}{Theorem 4.8}
+
+    \input{apprxlemma3}
+    
+\end{frame}
+
+\begin{frame}{Theorem 4.8 contd...}
+
+    \input{theorem81}
+    
+\end{frame}
+
+\begin{frame}{Theorem 4.8 contd...}
+
+    \input{theorem82}
+    
+\end{frame}
+
+\begin{frame}{Theorem 4.8 contd...}
+
+    \input{theorem83}
+    
+\end{frame}
+
+\begin{frame}{Theorem 4.8 contd...}
+
+
+\begin{exampleblock}{Claim}
+
+    \begin{equation}
+        6 \cdot \lvert D_b^* \rvert + \lvert D_b \rvert \le \varepsilon \cdot \lvert D^* \rvert        
+    \end{equation}
+
+% \begin{exampleblock}{Runtime of $C[e]$ computation for each cell $e$ in partition $P(a,a)$}
+
+%     \begin{equation}
+%         \sum_{e \in P(a,a)} n_e^{O(m^2)} \le (\sum_{e \in P(a,a)} n_e) ^{O(m^2)} = n^{O(m^2)} 
+%     \end{equation}
+    
+
+\end{exampleblock}
+
+\begin{exampleblock}{}
+
+    For any vertex $v$ in $D^*$, it belongs to at most $4(h + 1)$ of the sets
+    $D_0^*, D^*_1,...,D^*_{m - 1}$. Therefore, by the pigeonhole principle, we have
+
+    \begin{equation}    
+        \displaystyle \sum_{a=0}^{m-1} \lvert D_a^* \rvert \le 4( h+1 )\lvert D^* \rvert         
+    \end{equation}
+
+    For any vertex $v$ in $D$, it belongs to at most $4(h + 1)$ of the sets
+    $D_0, D_1,...,D_{m - 1}$. Therefore, by the pigeonhole principle, we have
+
+    \begin{equation}    
+        \displaystyle \sum_{a=0}^{m-1} \lvert D_a \rvert \le 4( h+1 )\lvert D \rvert \le 16( h+1 )\lvert D^* \rvert         
+    \end{equation}
+    
+
+\end{exampleblock}
+
+\end{frame}
+
+\begin{frame}{Theorem 4.8 contd...}
+
+
+\begin{exampleblock}{Adding $6*(3)$ and $(4)$}
+
+    \begin{equation}
+            6 \cdot \displaystyle \sum_{a=0}^{m-1} \lvert D_a^* \rvert + \displaystyle \sum_{a=0}^{m-1} \lvert D_a \rvert \le 40( h+1 )\lvert D^* \rvert   
+    \end{equation}
+
+% \begin{exampleblock}{Runtime of $C[e]$ computation for each cell $e$ in partition $P(a,a)$}
+
+%     \begin{equation}
+%         \sum_{e \in P(a,a)} n_e^{O(m^2)} \le (\sum_{e \in P(a,a)} n_e) ^{O(m^2)} = n^{O(m^2)} 
+%     \end{equation}
+    
+
+\end{exampleblock}
+
+\begin{exampleblock}{}
+
+    Therefore, again applying the pigeonhole principle, there must exist an integer $b \hspace{0.5em} \epsilon \hspace{0.5em} \{0, 1,...,m - 1\}$ such that,
+
+    \begin{equation}
+            6 \cdot \lvert D_b^* \rvert + \lvert D_b \rvert \le \frac{40( h+1 )}{m}\lvert D^* \rvert  \le \varepsilon \cdot \lvert D^* \rvert
+    \end{equation}
+
+% \begin{exampleblock}{Runtime of $C[e]$ computation for each cell $e$ in partition $P(a,a)$}
+
+%     \begin{equation}
+%         \sum_{e \in P(a,a)} n_e^{O(m^2)} \le (\sum_{e \in P(a,a)} n_e) ^{O(m^2)} = n^{O(m^2)} 
+%     \end{equation}
+    
+
+\end{exampleblock}
+
+
+
+\end{frame}
+
+\begin{frame}{Theorem 4.8 contd...}
+
+\input{theorem84}
+
+\end{frame}
+
+\begin{frame}{Theorem 4.8 contd...}
+
+\input{theorem85}
+
+\end{frame}
+
+\begin{frame}{Theorem 4.8 contd...}
+
+
+
+
+\begin{exampleblock}{}
+
+    For any cell $e$ that has $n$ connected components in central Area,
+
+    \vspace{0.5em}
+    
+    $\lvert V^*[e] \rvert = \displaystyle \sum_{h=0}^{n} \lvert V^*_h[e] \rvert \le 2(k -1) n$ 
+
+    \vspace{0.5em}
+
+    $\lvert D^\prime[e] \rvert = \lvert D^*[e] \rvert + \lvert V^*[e] \rvert \le \lvert D^*[e] \rvert + 2(k -1) n$ 
+
+    \vspace{1em}
+
+    We define $D^\prime$ for some $b \epsilon \{0,1,2,..., m -1\} ,$
+
+    \vspace{0.5em}
+
+    $D^\prime = D_b \cup \left( \bigcup\limits_{e \in P(b,b)} D^\prime[e] \right)$
+
+    \vspace{0.5em}
+
+   Clearly for each connected component $H$ of central area $G_c[e]$, $D^\prime$ has a connected component dominating $H$. However, not necessarily with minimum number of vertices. 
+
+    \begin{equation}    
+          \lvert A_b \rvert \le \lvert D^\prime \rvert           
+    \end{equation}
+    
+
+\end{exampleblock}
+
+\end{frame}
+
+\addtocounter{framenumber}{3}
+
+% \begin{frame}{Theorem 4.8 contd...}
+
+% \input{theorem86}
+
+% \end{frame}
+
+\end{document}
+
+

@@ -1,0 +1,59 @@
+
+
+
+\begin{tikzpicture}
+    % Draw the two circles (without radius visualization)
+    \node at (0,3) {
+
+        \begin{tikzpicture}
+            \filldraw[fill=pink] (-3, 0) circle (1) node {D$_1$};
+            \filldraw[fill=orange!50] (4, 0) circle (1) node {D$_2$};
+
+            % Define points: v1 on the boundary of the pink circle, vm on the boundary of the orange circle
+            \coordinate (v1) at (-2, 0);  % v1 on the rightmost point of the pink circle's boundary
+            \coordinate (v2) at (-1, -0.5); % Intermediate points
+            \coordinate (v3) at (0, 0.5);
+            \coordinate (v4) at (1, -0.5);
+            \coordinate (v5) at (2, 0.5);
+            \coordinate (vm) at (3, 0);    % vm on the leftmost point of the orange circle's boundary
+            \coordinate (u) at (-3,1);
+
+            % Draw the dotted zigzag edges
+            \draw (v1) -- (v2);
+            \draw [thick, blue](u) -- (v3);
+            \draw (v2) -- (v3);
+            \draw [thick, blue](v3) -- (v4);
+            \draw [thick, blue](v4) -- (v5);
+            \draw[dashed, thick, blue] (v5) -- (vm);
+
+            % Draw and label the points
+            \filldraw[fill=black] (v1) circle (3pt) node[above] {v$_1$};
+            \filldraw[fill=black] (v2) circle (3pt) node[below] {v$_2$};
+            \filldraw[fill=black] (v3) circle (3pt) node[above] {v$_3$};
+            \filldraw[fill=black] (v4) circle (3pt) node[below] {v$_4$};
+            \filldraw[fill=black] (v5) circle (3pt) node[above] {v$_5$};
+            \filldraw[fill=black] (vm) circle (3pt) node[below] {v$_m$};
+            \filldraw[fill=black] (u) circle (3pt) node[above] {u};
+
+            % Draw the points: v2 to vm in blue
+            \filldraw[fill=black] (v1) circle (3pt) node[above] {v$_1$};
+            \filldraw[fill=black] (v2) circle (3pt) node[below] {v$_2$};
+            \filldraw[fill=blue] (u) circle (3pt) node[above] {u};
+            \filldraw[fill=blue] (v3) circle (3pt) node[above] {v$_3$};
+            \filldraw[fill=blue] (v4) circle (3pt) node[below] {v$_4$};
+            \filldraw[fill=blue] (v5) circle (3pt) node[above] {v$_5$};
+            \filldraw[fill=blue] (vm) circle (3pt) node[below] {v$_m$};
+
+        
+
+            \node[draw, fill=blue!20, text width=10cm, rounded corners] at (0, -4) {
+            Again $u \epsilon \hspace{-0.3em} / D_1 $ as this will give yet another shorter path $\{u, v_3, v_4, \dots, v_m\}$ contradicting to our assumption.
+            };
+
+        \end{tikzpicture}
+    
+    };
+
+\end{tikzpicture}
+
+

@@ -1,0 +1,93 @@
+\documentclass{beamer}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{tikz}
+\usepackage{geometry}
+\usepackage{amsmath}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{amsfonts}
+\usepackage{caption}
+\usepackage{xcolor}
+
+\usepackage[none]{hyphenat}
+
+\usetheme{Madrid}
+\usecolortheme{seahorse}
+
+\geometry{bottom=0in}
+
+\title{Boundary Area}
+\author{Saha Kuljit Shantanu}
+\date{1905119}
+
+\begin{document}
+
+
+
+\maketitle
+
+\setcounter{framenumber}{54}
+
+\begin{frame}{Theorem 4.8 contd...}
+
+\input{theorem86}
+
+\end{frame}
+
+\begin{frame}{Theorem 4.8 contd...}
+
+\setcounter{equation}{7}
+
+
+\begin{exampleblock}{}
+
+    Since vertex $w$ in $D_b^*$ can be charged only twice ( by vertices $\{v_1,v_2\}$ ) for each connected component induced by independent neighbour in central Area, and in case of an unit disk graph vertex $w$ can have at most 3 independent neighbours $\{n_1,n_2,n_3\}$, it implies that $w$ can be charged 2*3 = 6 times. This phenomenon is only possible for vertices in $D_b^*$, hence,
+
+    
+
+    \vspace{0.5em}
+
+    $\lvert D^\prime[e] \rvert \le \lvert D^*[e] \rvert + 6 \cdot \lvert D^*_b[e] \rvert$ 
+
+    \vspace{0.5em}
+    
+    $\lvert D^\prime \rvert \le \lvert D_b \rvert + \displaystyle \sum_{e \epsilon P(b,b) } \lvert D^*[e] \rvert \le \displaystyle \sum_{e \epsilon P(b,b) } \left(  \lvert D^*[e] \rvert + 6 \cdot \lvert D^*_b[e] \rvert \right) $ 
+
+    \vspace{1em}
+
+    $ = \lvert D_b \rvert + \lvert D^* \rvert + 6 \cdot \lvert D_b^* \rvert $
+
+    \vspace{1em}
+
+\end{exampleblock}    
+
+\end{frame}
+
+\begin{frame}{Theorem 4.8 contd...}
+
+\begin{exampleblock}
+    
+
+    
+Using our claim for equation $(2)$, we conclude
+
+    \vspace{0.5em}
+
+    $\lvert D_b \rvert + \lvert D^* \rvert + 6 \cdot \lvert D_b^* \rvert \le \lvert D^* \rvert + \varepsilon \cdot \lvert D^* \rvert$
+
+    \vspace{0.5em}
+
+    $\lvert D^\prime \rvert \le ( 1 + \varepsilon ) \cdot \lvert D^* \rvert$
+
+   
+
+    \begin{equation}    
+          \lvert A_b \rvert \le \lvert D^\prime \rvert \le ( 1 + \varepsilon ) \cdot \lvert D^* \rvert          
+    \end{equation}
+    
+
+\end{exampleblock}
+
+\end{frame}
+
+\end{document}

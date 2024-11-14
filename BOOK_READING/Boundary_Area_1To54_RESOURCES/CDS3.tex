@@ -1,0 +1,48 @@
+\begin{tikzpicture}
+    % Shift the whole diagram down
+    \node at (0,3) { % Place it 3 inches from the bottom
+        \begin{tikzpicture}
+            % Draw the two circles (without the radius being visible)
+            \filldraw[fill=pink] (-3, 0) circle (1) node {D$_1$};
+            \filldraw[fill=orange!50] (4, 0) circle (1) node {D$_2$};
+
+            % Define points: v1 on the boundary of the pink circle, vm on the boundary of the orange circle
+            \coordinate (v1) at (-2, 0);  % v1 on the rightmost point of the pink circle's boundary
+            \coordinate (v2) at (-1, -0.5); % Intermediate points
+            \coordinate (v3) at (0, 0.5);
+            \coordinate (v4) at (1, -0.5);
+            \coordinate (v5) at (2, 0.5);
+            \coordinate (vm) at (3, 0);    % vm on the leftmost point of the orange circle's boundary
+
+            \filldraw[fill=yellow, opacity = 0.7] (v2)++(-1, 1) ellipse (3 and 2) node[above] {\textbf{D$_{1,3}$}};
+
+            % Draw the dotted zigzag edges
+            \draw (v1) -- (v2);
+            \draw (v2) -- (v3);
+            \draw (v3) -- (v4);
+            \draw (v4) -- (v5);
+            \draw[dashed, thick] (v5) -- (vm);
+
+            % Draw and label the points
+            \filldraw[fill=black] (v1) circle (3pt) node[above] {v$_1$};
+            \filldraw[fill=black] (v2) circle (3pt) node[below] {v$_2$};
+            \draw[thick, red] (v2) circle (10pt) ;
+            \filldraw[fill=black] (v3) circle (3pt) node[above] {v$_3$};
+            \filldraw[fill=black] (v4) circle (3pt) node[below] {v$_4$};
+            \filldraw[fill=black] (v5) circle (3pt) node[above] {v$_5$};
+            \filldraw[fill=black] (vm) circle (3pt) node[below] {v$_m$};
+            
+
+
+            \filldraw[fill=blue, opacity = 0.4] (v3) ++(0, 0.6) circle (0.6) node {D$_3$}; % Circle below v2
+
+            
+
+            \node[draw, fill=blue!20, text width=10cm, rounded corners] at (0, -3) {
+            $D_1$ and $D_3$ are merged upon joining $v_2$ hence number of connected components reduced.
+            };
+        
+        \end{tikzpicture}
+    };
+\end{tikzpicture}
+

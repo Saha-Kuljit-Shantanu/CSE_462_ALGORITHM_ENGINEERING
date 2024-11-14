@@ -1,0 +1,27 @@
+% \renewcommand{\thealgorithm}{4.\arabic{algorithm}}
+
+
+% \setcounter{algorithm}{0}
+
+\renewcommand{\thealgorithm}{4.B}
+
+\begin{algorithm}[H]
+
+\caption{$\textbf{4.B}$ PTAS for CDS-UDG}
+\textbf{Input:} A unit disk graph $G = (V, E)$, with all vertices lying in square $Q$.\\
+\textbf{Output:} An approximate connected dominating set $A_{a^*}$.
+\small
+\begin{algorithmic}[1]
+    \State Let $h \gets 3$ and $m \gets \lceil 160/\epsilon \rceil$.
+    \State Let $D \subseteq V$ be a 4-approximation to the minimum connected dominating set for $G$ (obtained by the algorithm of Corollary 4.5).
+    \For {$a \gets 0$ to $m - 1$}
+        \State Let $D_a \gets \{v \in D \mid v \text{ lies in the boundary area of } P(a, a)\}$.
+        \For {each cell $e$ of $P(a, a)$}
+            \State Compute set $C[e]$ (by exhaustive search of Lemma 4.6).
+        \EndFor
+        \State Let $A_a \gets D_a \cup \left( \bigcup\limits_{e \in P(a,a)} C[e] \right)$.
+    \EndFor
+    \State Let $a^* \gets \arg\min\limits_{0 \leq a < m} |A_a|$.
+    \State \textbf{Return} $A_{a^*}$.
+\end{algorithmic}
+\end{algorithm}
